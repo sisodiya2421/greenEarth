@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #769fcd;">
+            <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static', filename='favicon.ico') }}" alt="" width="48" height="48">
+                    </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">POLAR ICE CAPS</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('temperature') }}">TEMPERATURE VARIATIONS</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </nav>
