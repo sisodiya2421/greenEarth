@@ -1,0 +1,16 @@
+
+
+@font-face {
+    font-family: 'chilledregular';
+    src: url('./chilled-ywmgz-webfont.woff2') format('woff2'),
+         url('./chilled-ywmgz-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+    font-family: 'chilledregular';
+    font-weight:normal;
+    font-style:normal;
+    }
