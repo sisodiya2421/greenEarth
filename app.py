@@ -13,9 +13,6 @@ def index():
     ice.annualChange()
     return render_template('index.html')
 
-@app.route('/temperature', methods=['GET', 'POST'])
-def temperature():
-    return render_template('temperature.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
