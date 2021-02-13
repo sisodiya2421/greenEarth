@@ -8,6 +8,9 @@ CORS(app)
 
 @app.route('/', methods=['GET'])
 def index():
+    ice.dailyExtent()
+    ice.annualAverage()
+    ice.annualChange()
     return render_template('index.html')
 
 @app.route('/temperature', methods=['GET', 'POST'])

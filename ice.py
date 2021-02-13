@@ -1,14 +1,14 @@
 import numpy as np # linear algebra
 import pandas as pd # data processing
 import datetime as dt # date and time processing functions
-import itertools
 import matplotlib.pyplot as plt # basic plotting 
 import matplotlib.dates as mdates # date processing in matplotlib
 from matplotlib.offsetbox import AnchoredText
+import mpld3
 plt.style.use('ggplot') # use ggplot style
 
 # read in the data from the provided csv file
-df = pd.read_csv('./data/seaice.csv')
+df = pd.read_csv('./static/seaice.csv')
 
 # drop the 'Source Data' column as it obscures more useful columns and doesn't tell us much
 df.drop('Source Data', axis = 1, inplace=True)
@@ -22,7 +22,7 @@ north = df[df['hemisphere'] == 'north']
 south = df[df['hemisphere'] == 'south']
 
 def dailyExtent():
-    plt.figure(figsize=(9,3))
+    fig = plt.figure(figsize=(12,4))
     plt.plot(north.index,north['Extent'], label='Northern Hemisphere')
     plt.plot(south.index,south['Extent'], label='Southern Hemisphere')
 
@@ -32,8 +32,8 @@ def dailyExtent():
     plt.ylabel('Sea ice extent (10^6 sq km)')
     plt.xlabel('Date')
     plt.title('Daily sea-ice extent');
-
-dailyExtent()
+    # saving to html
+    save_html("dailyextent", fig)
 
 def annualAverage():
     # resample raw data into annual averages
@@ -44,15 +44,17 @@ def annualAverage():
     northyear = northyear[1:-1]
     southyear = southyear[1:-1]
 
-    plt.figure(figsize=(9,3))
-    plt.plot(northyear.Year,northyear['Extent'], marker = '.', label='Northern Hemisphere')
-    plt.plot(southyear.Year,southyear['Extent'], marker = '.', label='Southern Hemisphere')
+    fig = plt.figure(figsize=(12,4))
+    plt.plot(northyear.index,northyear['Extent'], marker = '.', label='Northern Hemisphere')
+    plt.plot(southyear.index,southyear['Extent'], marker = '.', label='Southern Hemisphere')
 
     # add plot legend and titles
     plt.legend(bbox_to_anchor=(0., -.362, 1., .102), loc=3, ncol=2, mode="expand", borderaxespad=0.)
     plt.ylabel('Sea ice extent (10^6 sq km)')
     plt.xlabel('Date')
     plt.title('Annual average sea-ice extent')
+    # saving to html
+    save_html("annualaverage", fig)
 
 def annualChange():
     # define date range to plot between
@@ -60,7 +62,7 @@ def annualChange():
     end = dt.datetime.now().year + 1
 
     # define plot
-    f, axarr = plt.subplots(2, sharex=True, figsize=(9,6))
+    f, axarr = plt.subplots(2, sharex=True, figsize=(10,6))
 
 
     # organise plot axes (set x axis to months only and cycle colours according to gradient)
@@ -96,3 +98,11 @@ def annualChange():
         # plot each year individually
         axarr[0].plot(nyeardf.index,nyeardf['Extent'], label = year)
         axarr[1].plot(syeardf.index,syeardf['Extent'])
+    save_html("annualchange", f)
+
+def save_html(filename, fig):
+    # saving to html
+    html_str = mpld3.fig_to_html(fig)
+    Html_file= open("./templates/{}.html".format(filename),"w")
+    Html_file.write(html_str)
+    Html_file.close()
