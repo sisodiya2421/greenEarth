@@ -22,7 +22,8 @@ north = df[df['hemisphere'] == 'north']
 south = df[df['hemisphere'] == 'south']
 
 def dailyExtent():
-    fig = plt.figure(figsize=(12,4))
+    fig = plt.figure(figsize=(12,6))
+    plt.subplot(2, 1, 1)
     plt.plot(north.index,north['Extent'], label='Northern Hemisphere')
     plt.plot(south.index,south['Extent'], label='Southern Hemisphere')
 
@@ -44,7 +45,8 @@ def annualAverage():
     northyear = northyear[1:-1]
     southyear = southyear[1:-1]
 
-    fig = plt.figure(figsize=(12,4))
+    fig = plt.figure(figsize=(12,6))
+    plt.subplot(2, 1, 1)
     plt.plot(northyear.index,northyear['Extent'], marker = '.', label='Northern Hemisphere')
     plt.plot(southyear.index,southyear['Extent'], marker = '.', label='Southern Hemisphere')
 
@@ -62,7 +64,7 @@ def annualChange():
     end = dt.datetime.now().year + 1
 
     # define plot
-    f, axarr = plt.subplots(2, sharex=True, figsize=(10,6))
+    f, axarr = plt.subplots(2, sharex=True, figsize=(9,5))
 
 
     # organise plot axes (set x axis to months only and cycle colours according to gradient)
@@ -76,7 +78,8 @@ def annualChange():
     # add plot legend and titles
     axarr[0].set_ylabel('Sea ice extent (10^6 sq km)')
     axarr[1].set_ylabel('Sea ice extent (10^6 sq km)')
-    axarr[1].set_xlabel('Month')
+    axarr[0].set_xlabel('Month (NORTHERN HERMISPHERE)')
+    axarr[1].set_xlabel('Month (SOUTHERN HERMISPHERE)')
     axarr[0].set_title('Annual change in sea-ice extent');
     axarr[0].add_artist(AnchoredText('Northern Hemisphere', loc=3))
     axarr[1].add_artist(AnchoredText('Southern Hemisphere', loc=2))
