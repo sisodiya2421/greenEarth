@@ -8,68 +8,93 @@
         <div>
             <br>
             <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
+            The polar ice caps are melting six times faster than in 1990s, according to
+            the most complete analysis to date.
             The <a href="https://nsidc.org/">National Snow and Ice Data Center</a> has provided a very extensive
             dataset of the extent of sea-ice data. It is collected every other day since 1978 and daily since around 1988.
+            <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
+            We lose sea ice at a rate of almost 13% per decade, and over the past 30 years, the oldest and thickest ice in
+            the Artic has declined by a stunning 95%. Less ice means less reflected heat, meaning more intense heatwaves worldwide.
+            But it also means more extreme winters as the polar jet stream is destablized by warmer air. Another risk factor is that
+            the rising seas endanger coastal cities and small islands nations by exacerbating coastal flooding and storm surge, making 
+            dangerous weather events even more sp.
+            <p>
+            <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
             Here are some explainatory data analysis and visualisation of the data.
             </p>
+            <div class="container mt-5 ms-5 ps-5">
+                <div class="row">
+                    <div class="col">
+                        {% include "timeseries.html" %}
+                    </div>
+                </div>
+            </div>
             <br>
             <div class='tableauPlaceholder ms-5' id='viz1613141577377' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;gr&#47;greenEarth&#47;Poles&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='greenEarth&#47;Poles' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;gr&#47;greenEarth&#47;Poles&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613141577377');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='1027px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='1027px';} else { vizElement.style.width='100%';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         </div>
         <hr style="margin-top: 1rem; margin-bottom: 1rem; border: 0; border-top: 1px solid rgba(0, 0, 0, 0.1);">
-        <div class="container mt-2">
-            <div class="d-flex justify-content-center">
-                {% include "dailyextent.html" %}
-            </div>
-            <div class="d-flex justify-content-center mt-2">
-                <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-                From the data above, we can see there are independent maxima and minima for the northern
-                and southern hemisphere data sets, as is to be expected from the change of season.
-                In addition to this, <b>there is on an average more sea-ice in the southern hemisphere than
-                the north</b>.
-                </p>
-            </div>
-        </div>
         <div class="container mt-3">
-            <div class="d-flex justify-content-center">
-                {% include "annualaverage.html" %}
-            </div>
-            <div class="d-flex justify-content-center mt-2">
-                <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-                Here, we observe that the general trend has been a steady decrease in the extent of sea-ice
-                in the northern hemisphere, the extent of sea-ice in the southern hemisphere was relatively
-                constant until the early 2000s, and since then has been increasing, at first this seemed to
-                be a very strange result, but this has been known for some time and is due to a large number
-                of complicated factors which can be read 
-                <a href="https://www.theguardian.com/environment/2014/oct/09/why-is-antarctic-sea-ice-at-record-levels-despite-global-warming">
-                here</a>.
-                </p>
-            </div>
-        </div>
-        <div class="container mt-3">
-            <div class="d-flex justify-content-center">
-                {% include "annualchange.html" %}
-            </div>
-            <div class="mt-2">
-                <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-                In this figure the older data are coloured green, shifting towards blue in the current data.
-                </p>
-                <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-                From this data we can clearly see that there is a shift in the positions of the maxima and minima 
-                of the sea ice extent in both the northern and southern hemispheres, indicating that the seasons 
-                have been gradually shifting over time.
-                </p>
-                <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-                In the northern hemisphere data there is a marked difference between the fist and final year data, 
-                clearly highlighting the decrease in the extent of sea ice year on year. The southern hemisphere 
-                has been much more uniform over the same time period, indicating that the extent of sea-ice melting 
-                over this period has been much lower.
-                </p>
+            <div class="row">
+                <div class="col">
+                    {% include "dailyextent.html" %}
+                </div>
+                <div class="col align-self-center mb-5 pb-5">
+                    <p class="mb-5 pb-5" align="justify" style="line-height: 1.5;">
+                    We can see there are independent maxima and minima for the northern
+                    and southern hemisphere data sets, as is to be expected from the change of season.
+                    In addition to this, <b>there is on an average more sea-ice in the southern hemisphere than
+                    the north</b>.
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="d-flex d-flex justify-content-start">
-            <p class="ps-5 pe-5 ms-5 me-5">
-            <a href="{{ url_for('static', filename='seaice.csv') }}"><b>Download the sea-ice data in csv format</b></a>
-            </p>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col align-self-center mb-5 pb-5">
+                    <p class="mb-5 pb-5" align="justify" style="line-height: 1.5;">
+                    Here, we observe that the general trend has been a steady decrease in the extent of sea-ice
+                    in the northern hemisphere, the extent of sea-ice in the southern hemisphere was relatively
+                    constant until the early 2000s, and since then has been increasing, at first this seemed to
+                    be a very strange result, but this has been known for some time and is due to a large number
+                    of complicated factors which can be read 
+                    <a href="https://www.theguardian.com/environment/2014/oct/09/why-is-antarctic-sea-ice-at-record-levels-despite-global-warming">
+                    here</a>.
+                    </p>
+                </div>
+                <div class="col">
+                    {% include "annualaverage.html" %}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {% include "annualchange.html" %}
+                </div>
+                <div class="col align-self-center mt-3">
+                    <p align="justify" style="line-height: 1.5;">
+                    In this figure the older data are coloured green, shifting towards blue in the current data.
+                    </p>
+                    <p align="justify" style="line-height: 1.5;">
+                    From this data we can clearly see that there is a shift in the positions of the maxima and minima 
+                    of the sea ice extent in both the northern and southern hemispheres, <b>indicating that the seasons 
+                    have been gradually shifting over time.</b>
+                    </p>
+                    <p align="justify" style="line-height: 1.5;">
+                    In the northern hemisphere data there is a marked difference between the fist and final year data, 
+                    clearly highlighting the decrease in the extent of sea ice year on year. The southern hemisphere 
+                    has been much more uniform over the same time period, indicating that the extent of sea-ice melting 
+                    over this period has been much lower.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container mb-4 mt-4">
+            <div class="d-flex justify-content-center">
+                <a href="{{ url_for('static', filename='seaice.csv') }}"><b>Download the sea-ice data in csv format</b></a>
+            </div>
         </div>
     </div>
     </div>

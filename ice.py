@@ -22,7 +22,7 @@ north = df[df['hemisphere'] == 'north']
 south = df[df['hemisphere'] == 'south']
 
 def dailyExtent():
-    fig = plt.figure(figsize=(12,6))
+    fig = plt.figure(figsize=(9,6))
     plt.subplot(2, 1, 1)
     plt.plot(north.index,north['Extent'], label='Northern Hemisphere')
     plt.plot(south.index,south['Extent'], label='Southern Hemisphere')
@@ -45,7 +45,7 @@ def annualAverage():
     northyear = northyear[1:-1]
     southyear = southyear[1:-1]
 
-    fig = plt.figure(figsize=(12,6))
+    fig = plt.figure(figsize=(9,6))
     plt.subplot(2, 1, 1)
     plt.plot(northyear.index,northyear['Extent'], marker = '.', label='Northern Hemisphere')
     plt.plot(southyear.index,southyear['Extent'], marker = '.', label='Southern Hemisphere')
