@@ -1,0 +1,56 @@
+
+
+@font-face {
+    font-family: 'chilledregular';
+    src: url('./chilled-ywmgz-webfont.woff2') format('woff2'),
+         url('./chilled-ywmgz-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+    font-family: 'chilledregular';
+    font-weight:normal;
+    font-style:normal;
+    }
+
+p {
+    line-height: 2.5;
+}
+
+a {
+    color: #1687a7;
+}
+.slidecontainer {
+    width: 100%;
+    }
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1687a7;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1687a7;
+    cursor: pointer;
+}

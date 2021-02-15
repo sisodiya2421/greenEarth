@@ -1,4 +1,5 @@
 const image = document.getElementById("play_image")
+var slider = document.getElementById("myRange");
 const yearPlaceholder = document.getElementById("year")
 
 function play() {
@@ -9,6 +10,7 @@ function play() {
     if (year < 2021){
       image.src = `../static/time_series/${srno}_seaice_${year}_720x360.jpg`;
       yearPlaceholder.innerHTML = year;
+      slider.value = year;
       srno = srno + 1;
       year = year + 1;
     }
@@ -17,3 +19,8 @@ function play() {
     }
   }
 };
+
+slider.oninput = function changeslider() {
+  yearPlaceholder.innerHTML = this.value;
+  image.src = `../static/time_series/${parseInt(this.value) + 69}_seaice_${this.value}_720x360.jpg`;
+}
