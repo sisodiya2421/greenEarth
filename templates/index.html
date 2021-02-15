@@ -1,34 +1,51 @@
 {% extends "base.html" %}
     {% block content %}
-    <div class="container h-100">
+    <div class="container h-100 border border-3 border-top-0 border-bottom-0">
     <div class="row align-items-center">
         <div class="container mt-5">
             <h1 style="font-family: chilledregular; text-align: center; color: #1687a7; font-size: 70px">POLAR ICE CAP</h1>
         </div>
         <div>
             <br>
-            <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
+            <p class="ps-4 pe-4 ms-4 me-5" align="justify" style="line-height: 1.5;">
             The polar ice caps are melting six times faster than in 1990s, according to
             the most complete analysis to date.
             The <a href="https://nsidc.org/">National Snow and Ice Data Center</a> has provided a very extensive
             dataset of the extent of sea-ice data. It is collected every other day since 1978 and daily since around 1988.
-            <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
+            <p class="ps-4 pe-4 ms-4 me-5" align="justify" style="line-height: 1.5;">
             We lose sea ice at a rate of almost 13% per decade, and over the past 30 years, the oldest and thickest ice in
             the Artic has declined by a stunning 95%. Less ice means less reflected heat, meaning more intense heatwaves worldwide.
             But it also means more extreme winters as the polar jet stream is destablized by warmer air. Another risk factor is that
             the rising seas endanger coastal cities and small islands nations by exacerbating coastal flooding and storm surge, making 
             dangerous weather events even more sp.
             <p>
-            <p class="ps-5 pe-5 ms-5 me-5" align="justify" style="line-height: 1.5;">
-            Here are some explainatory data analysis and visualisation of the data.
+            <p class="ps-4 pe-4 ms-4 me-5" align="justify" style="line-height: 1.5;">
+            Here are some explainatory data analysis and visualisation of the data:
             </p>
-            <div class="container mt-5 ms-5 ps-5">
+            <div class="container mt-4 ms-4 ps-4">
                 <div class="row">
-                    <div class="col">
+                    <div class="col mb-5">
+                        <p class="fs-3 mb-0" style="color: #1687a7;"><b>TIME SERIES: 1979-2020</b></p>
+                        <div class="text-muted" style="font-size: 14px;">Data Source: Satellite observations<br>Credit: <a class="text-muted" href="https://svs.gsfc.nasa.gov/">NASA Scientific Visualization Studio</a></div>
+                        <p class="mt-4 me-5 pe-2" align="justify" style="line-height: 1.5;">The animated time series below shows the annual Arctic sea ice minimum since 1979, based on satellite observations. 
+                        The 2012 sea ice extent is the lowest in the satellite record. Click on the button below to see the visualization.</p>
+                        <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn mt-2" onclick="play()"><img src = "{{ url_for('static', filename='play.png') }}" alt="play" id="play" width="28px" height="28px"/></button>
+                            </div>
+                            <div class="col">
+                                <div id="year" class="fs-1">
+                                    1979
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="col me-5 pe-4">
                         {% include "timeseries.html" %}
                     </div>
                 </div>
             </div>
+            <br>
             <br>
             <div class='tableauPlaceholder ms-5' id='viz1613141577377' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;gr&#47;greenEarth&#47;Poles&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='greenEarth&#47;Poles' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;gr&#47;greenEarth&#47;Poles&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1613141577377');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='1027px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='1027px';} else { vizElement.style.width='100%';vizElement.style.height='1277px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         </div>

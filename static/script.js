@@ -1,4 +1,5 @@
 const image = document.getElementById("play_image")
+const yearPlaceholder = document.getElementById("year")
 
 function play() {
   let srno = 2048;
@@ -7,6 +8,7 @@ function play() {
   function changeImg() {
     if (year < 2021){
       image.src = `../static/time_series/${srno}_seaice_${year}_720x360.jpg`;
+      yearPlaceholder.innerHTML = year;
       srno = srno + 1;
       year = year + 1;
     }
