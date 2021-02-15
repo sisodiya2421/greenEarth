@@ -20,6 +20,8 @@ function play() {
     }
     else {
       play_wrapper.innerHTML = `<button type="button" class="btn mt-2" onclick="play()"><img src = "../static/play.png" alt="play" id="play" width="28px" height="28px"/></button>`;
+      srno = 2048;
+      year = 1979;
       clearInterval(id);
     }
   }
