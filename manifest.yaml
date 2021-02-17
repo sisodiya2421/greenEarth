@@ -1,0 +1,5 @@
+applications:
+- name: greenEarth
+  random-route: true
+  memory: 256M
+  command: NEW_RELIC_CONFIG_FILE=newrelic.ini newrelic-admin run-program gunicorn --workers 3 flask_app:app
