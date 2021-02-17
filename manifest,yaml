@@ -1,0 +1,4 @@
+applications:
+- name: greenEarth
+  random-route: true
+  memory: 256M
